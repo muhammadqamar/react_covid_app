@@ -9,3 +9,136 @@
 
 // If you want to add something do it here
 @import "custom";
+
+
+.c-default-layout {
+    padding: 20px;
+
+    .boxes {
+        display: flex;
+    
+        flex-wrap: wrap;
+    }
+
+    .boxer {
+        
+        width:300px;
+        height: 200px;
+        border-radius: 5px;
+        
+        justify-content: center;
+        align-items: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        margin-right:20px;
+        margin-top: 20px;
+        color: #fff;
+        box-shadow: 0px 0px 4px 2px #d2cccc;
+        &:nth-of-type(1) {
+            background: #1f1498!important;
+            background: linear-gradient( 
+             45deg
+         ,#321fdb,#1f1498)!important;
+            border-color: #1f1498!important;
+        }
+        &:nth-of-type(2) {
+            background: #2982cc!important;
+    background: linear-gradient(
+45deg
+,#39f,#2982cc)!important;
+    border-color: #2982cc!important;
+        }
+        &:nth-of-type(3) {
+            background: #f6960b!important;
+            background: linear-gradient(
+        45deg
+        ,#f9b115,#f6960b)!important;
+            border-color: #f6960b!important;
+        }
+        &:nth-of-type(4) {
+            background: #339814!important;
+            background: linear-gradient( 
+             45deg
+         ,#1fdb3e,#149865)!important;
+            border-color: #659814!important;
+        }
+        &:nth-of-type(5) {
+            background: #d6450b!important;
+            background: linear-gradient( 
+             45deg
+         ,#e22c14,#cf0f0f)!important;
+            border-color: #690d09!important;
+        }
+
+        &:nth-of-type(6) {
+            background: #98146c!important;
+            background: linear-gradient( 
+             45deg
+         ,#db1fd2,#7e1498)!important;
+            border-color: #821498!important;
+        }
+
+        &:nth-of-type(7) {
+            background: #148f98!important;
+            background: linear-gradient( 
+             45deg
+         ,#1f42db,#096088)!important;
+            border-color: #052838!important;
+        }
+
+    
+      input {
+        width: 200px;
+        border-radius: 2px;
+        border: none;
+        margin-bottom: 5px;
+        padding-left: 8px;
+      }
+    }
+
+    h1 {
+        font-size: 18px;
+        font-weight: 500;
+        word-break: break-all;
+    }
+
+    h5 {
+        font-size: 16px;
+        font-weight: 400;
+        text-decoration: underline;
+    }
+
+    .form-inputer {
+      label {
+       font-weight: bold;
+       padding-top: 10px;
+      }
+
+      input {
+        width:500px;
+        height: 30px;border-radius: 5px;
+        display: flex;
+        border-radius: 5px;
+        border: none;
+        padding-left: 5px;
+      }
+    }
+}
+.c-header-with-subheader {
+    display: none;
+}
+
+.assignment{
+    text-align: center;
+    padding: 20px 0px;
+    text-decoration: underline;
+}
+
+.mixed-chart {
+    display: flex;   
+
+    .charter {
+        width:50%;
+    }
+}
