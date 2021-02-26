@@ -3,7 +3,6 @@ import { useSelector, useDispatch } from 'react-redux'
 import {
   CCreateElement,
   CSidebar,
-  CSidebarBrand,
   CSidebarNav,
   CSidebarNavDivider,
   CSidebarNavTitle,
