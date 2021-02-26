@@ -122,6 +122,7 @@ const TheLayout = () => {
       <div className="c-wrapper">
        <div className="c-body">
           <div className="form-inputer">
+            <div className="do">
             <label>Enter country name</label>
             <input
               list="browsers"
@@ -177,6 +178,56 @@ const TheLayout = () => {
                 setperday(allv / 7);
               }}
             />
+            </div>
+            <div className="telegram">
+              Telegram Bot Id : t.me/covid_covid_dovic_bot
+              <button
+               onClick={async ()=>{
+                  Swal.showLoading()
+                  fetch('https://api.telegram.org/bot1697033506:AAEElQHeZydY-S5ZbX4tXs2z1pWdkqywC-A/getUpdates', {
+                    method: 'POST', // or 'PUT'
+                    headers: {
+                      'Content-Type': 'application/json',
+                    },
+                    
+                  })
+                  .then(response => response.json())
+                  .then(data => {
+                       var removeDuplicate = []; 
+                       data.result.map(x=>{
+                         if(!removeDuplicate.includes(x.message?.chat?.id)) {
+                          removeDuplicate.push(x.message?.chat?.id)
+                          var text = `Country: ${country}\r
+                          Total Cases: ${ eachcountry.length > 0 ? eachcountry[eachcountry.length - 1]?.total: 0}\r
+                          Active Cases/Total infections: ${eachcountry.length > 0 ? eachcountry[eachcountry.length - 1]?.active: 0}\r
+                          Total infections Last 24 hours:   ${eachcountry.length > 0
+                            ? eachcountry[eachcountry.length - 1]?.active -
+                              eachcountry[eachcountry.length - 2]?.active
+                            : 0}\r
+                          Total Death: ${eachcountry.length > 0 ? eachcountry[eachcountry.length - 1]?.death: 0}\r
+                          Recovered: ${eachcountry.length > 0 ? eachcountry[eachcountry.length - 1]?.recovered: 0}\r
+                          `
+                        fetch(`https://api.telegram.org/bot1697033506:AAEElQHeZydY-S5ZbX4tXs2z1pWdkqywC-A/sendMessage?chat_id=${x.message?.chat?.id}&text=${text}`, {
+                          method: 'POST', // or 'PUT'
+                          headers: {
+                            'Content-Type': 'application/json',
+                          },
+                          
+                        })}
+                       })
+                       Swal.fire({
+                        icon: 'success',
+                        title: 'Sent',
+                        
+                      })
+                  })
+                  .catch((error) => {
+                    console.error('Error:', error);
+                  });
+               }}
+              >Send Data to Telegram now</button> 
+               
+            </div>
           </div>
           <div className="mixed-chart">
             <div className="charter">
@@ -220,7 +271,7 @@ const TheLayout = () => {
             </div>
 
             <div className="boxer">
-              <h1>Total infections 24 hours</h1>
+              <h1>Total Infections Last 24 Hours</h1>
               <h5>
                 {eachcountry.length > 0
                   ? eachcountry[eachcountry.length - 1]?.active -

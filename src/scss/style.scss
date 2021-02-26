@@ -110,6 +110,28 @@
     }
 
     .form-inputer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 25px;
+
+      .telegram{
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: flex-end;
+
+          button {
+              background-color: #920909;
+              color:#fff;
+              border:none;
+                margin-top: 5px;
+                padding: 10px 20px;
+                border-radius: 5px;
+            }
+      }
+
+
       label {
        font-weight: bold;
        padding-top: 10px;
